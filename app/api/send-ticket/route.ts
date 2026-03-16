@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     const logoUrl = 'https://www.loop-indonesia.com/wp-content/uploads/2021/06/LOGO-LOOP-BARU-2-scaled.png'; // Ganti pake URL logo asli Loop ya, Dil!
 
     const { data, error } = await resend.emails.send({
-      from: 'Loop Institute of Coaching <https://registrasi.samaloop.com>', 
+      from: 'Loop Institute of Coaching <no-reply@samaloop.com>', 
       to: [email],
       subject: `Tiket Halal Bihalal samaloop 2026 - ${name}`,
       html: `

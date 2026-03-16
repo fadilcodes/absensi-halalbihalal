@@ -45,7 +45,7 @@ export default function AdminDashboard() {
     if (dbError) throw dbError;
 
     // 2. Panggil API Kirim Email
-    const response = await fetch('./api/send-ticket', {
+    const response = await fetch('/api/send-ticket', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, name, userId: id, category }),
@@ -55,9 +55,9 @@ export default function AdminDashboard() {
 
     alert(`Pembayaran ${name} Berhasil di-Approve & Tiket Terkirim!`);
     fetchParticipants(); // Refresh tabel
-  } catch (err) {
-    console.error(err);
-    alert('Duh, ada error pas proses approval.');
+  } catch (err: any) {
+  console.error("Detail Error:", err);
+  alert(`Error: ${err.message || "Gagal update data"}`); // Biar muncul di layar HP errornya apa
   }
 
 };
