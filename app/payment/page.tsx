@@ -3,7 +3,7 @@
 import { useSearchParams } from 'next/navigation'
 import { Suspense } from 'react'
 import { CreditCard, MessageCircle, AlertCircle } from 'lucide-react'
-import { getPriceDetails } from '@/app/utils/pricing'
+import { getPriceDetails } from '../utils/pricing'; 
 
 function PaymentContent() {
   const searchParams = useSearchParams()
